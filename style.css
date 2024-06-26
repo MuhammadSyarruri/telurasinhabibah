@@ -1,0 +1,412 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #ACE1AF;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+background-color: #4a664b;
+width: 100%;
+height: 80px;
+}
+
+.ul-navbar {
+    float: right;
+    margin-right: 55px;
+}
+
+.li-navbar {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+.a-navbar {
+    color: white;
+    font-size: 20px;
+}
+
+.logo {
+    line-height: 80px;
+    padding: 0 120px;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+}
+
+.a-navbar:hover {
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    transition: .1s ease-in-out;
+    border-radius: 3px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* INTRO */
+.intro {
+    background-image: url(t4.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1-intro {
+    font-size: 130px;
+    font-family: 'Anta';
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 4px 4px;
+}
+
+/* ABOUT */
+.about {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h2-about {
+    font-family: 'Alegreya SC';
+    font-size: 65px;
+    padding: 8px;
+}
+
+.p1-about {
+    font-size: 24px;
+}
+
+.story-about {
+    font-size: 21px;
+    padding: 20px;
+}
+
+.p2-about {
+    padding: 10px;
+}
+
+/* PROCES */
+.proces {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h2-proces {
+    font-family: 'Alegreya SC';
+    font-size: 65px;
+}
+
+.card-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.card {
+    background-color: aliceblue;
+    height: 360px;
+    width: 250px;
+    border: 4px solid gray;
+    border-radius: 45px;
+    margin: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    padding-top: 50px;
+    box-shadow: 10px 10px;
+}
+
+.judul-card {
+    font-size: 30px;
+    font-family: 'Alegreya SC';
+    font-weight: bold;
+}
+
+.isi-card {
+    font-size: 20px;
+    padding: 20px;
+}
+
+/* LOKASI */
+.mitra {
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.h2-mitra {
+    font-family: 'Alegreya SC';
+    display: flex;
+    justify-content: center;
+    font-size: 65px;
+}
+
+.p-mitra {
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    padding-top: 20px;
+}
+
+.grid-container {
+    display: flex;
+    padding-left: 80px;
+}
+
+.ul-alamat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.li-alamat {
+    font-size: 20px;
+    margin: 8px;
+    padding-left: 10px;
+}
+
+.line {
+    width: 500px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0 35px;
+}
+
+.img-grid {
+    padding-top: 150px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #4a664b;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+.div-footer {
+    margin: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-footer {
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p-footer {
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    font-weight: bold;
+    display: flex;
+}
+
+.a-footer {
+    color: white;
+    font-size: 17px;
+    margin: 5px;
+}
+
+.a-footer:hover {
+    background-color: black;
+    transition: .2s ease-in-out;
+}
+.p-wa {
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    font-weight: bold;
+    display: flex;
+}
+.whatsapp {
+    margin-right: 15px;
+    font-size: 33px;
+    color: rgb(0, 255, 0);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 858px) {
+    .logo {
+        font-size: 24px;
+        padding: 0 0 0 10px;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+    .ul-navbar {
+        position: fixed;
+        width: 100%;
+        height: 400px;
+        background-color: #4a664b;
+        top: 80px;
+        left: 100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .li-navbar {
+        display: block;
+        line-height: 60px;
+    }
+    .a-navbar {
+        font-size: 20px;
+    }
+    .a-navbar:hover {
+        border-bottom: none;
+        border-top: none;
+        color: black;
+    }
+    #check:checked ~ .ul-navbar{
+        left: 0;
+    }
+
+    .intro {
+        height: 400px;
+    }
+
+    .h1-intro {
+        font-size: 50px;
+    }
+
+    .h2-about {
+        font-size: 38px;
+    }
+
+    .p1-about {
+        font-size: 20px;
+    }
+    
+    .story-about {
+        font-size: 18px;
+    }
+
+    .proces {
+        height: 2400px;
+    }
+    .h2-proces {
+        font-size: 38px;
+    }
+    .card-area {
+        flex-direction: column;
+    }
+    .arrow {
+        transform: rotate(90deg);
+    }
+    .card {
+        margin: 40px;
+    }
+
+    .mitra {
+        height: 1670px;
+    }
+    .h2-mitra {
+        font-size: 38px;
+    }
+    .p-mitra {
+        font-size: 20px;
+        text-align: center;
+    }
+    .li-alamat {
+        font-size: 15px;
+    }
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .grid-container {
+        padding-left: 0;
+        padding-bottom: 0;
+        flex-direction: column;
+    }
+    .li-alamat {
+        padding-left: 0;
+    }
+    .line {
+        width: 340px;
+    }
+    .img-grid {
+        width: 240px;
+        height: 215px;
+        padding-top: 20px;
+        padding-left: 20%;
+        justify-content: center;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+    }
+    .div-footer{
+        margin: 20px;
+    }
+}
+
+
+/* STICKY NAVBAR */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+/* STICKY NAVBAR */
+
+.space {
+    background-color: #4a664b;
+    width: 100%;
+    height: 80px;
+}
