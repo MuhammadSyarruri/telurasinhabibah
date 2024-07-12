@@ -329,9 +329,27 @@ height: 80px;
     .story-about {
         font-size: 18px;
     }
-/* PROCES */
     
-/* PROCES */
+    .proces {
+        height: 2400px;
+    }
+    .h2-proces {
+        font-size: 38px;
+    }
+    .card-area {
+        flex-direction: column;
+    }
+    .arrow {
+        transform: rotate(90deg);
+    }
+    .card {
+        margin: 0px;
+        padding-top: 20px;
+    }
+    .isi-card {
+        padding-top: 10px;
+    }
+
     .mitra {
         height: 1670px;
     }
