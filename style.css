@@ -338,12 +338,13 @@ height: 80px;
     }
     .card-area {
         flex-direction: column;
+        padding: 0px;
     }
     .arrow {
         transform: rotate(90deg);
     }
     .card {
-        margin: 0px;
+        margin: 40px;
         padding-top: 20px;
     }
     .isi-card {
