@@ -217,6 +217,17 @@ height: 80px;
     padding-top: 150px;
 }
 
+/* Maps */
+.gomap {
+    padding-top: 120px;
+}
+
+.maps {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
 /* FOOTER */
 .footer {
     background-color: #4a664b;;
