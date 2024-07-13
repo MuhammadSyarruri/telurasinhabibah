@@ -228,6 +228,10 @@ height: 80px;
     padding-top: 30px;
 }
 
+.frame {
+    border-radius: 30px;
+}
+
 /* FOOTER */
 .footer {
     background-color: #4a664b;;
@@ -406,8 +410,12 @@ height: 80px;
     .div-footer{
         margin: 20px;
     }
-}
 
+    .frame {
+        width: 350px;
+        height: 275px;
+    }
+}
 
 /* STICKY NAVBAR */
 .sticky {
