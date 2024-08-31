@@ -811,6 +811,10 @@ nav {
         display: block;
     }
 
+    .grid div {
+        margin: 0;
+    }
+
     .grid div p {
         font-size: 15px;
         width: 21rem;
