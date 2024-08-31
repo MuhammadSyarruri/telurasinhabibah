@@ -1,439 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
+    color: #fff;
+    font-family: "poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
-body {
-    background-color: #ACE1AF;
+.kontak {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
 }
 
-/* NAVIGATION BAR */
-.navbar {
-background-color: #4a664b;
-width: 100%;
-height: 80px;
+.kontak img {
+    height: 80px;
+    width: 80px;
 }
 
-.ul-navbar {
-    float: right;
-    margin-right: 55px;
+main {
+    background: linear-gradient(to right bottom, #00ffea 10%, lime);
+    position: relative;
 }
 
-.li-navbar {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
+main::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent 10%, lime);
+    top: 93%;
 }
-
-.a-navbar {
-    color: white;
-    font-size: 20px;
+/* navbar */
+nav {
+    background-color: #4a664b;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    line-height: 80px;
-    padding: 0 120px;
-    font-size: 35px;
-    color: white;
+    font-size: 2.5rem;
+    margin-left: 5rem;
+    font-weight: 900;
+    background: linear-gradient(to top right, #ACE1AF 40%, lime);
+    background-clip: text;
+    font-style: italic;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo:hover {
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #000;
+    transition: all 0.4s;
+}
+
+.nav-a {
+    margin-right: 6rem;
+}
+
+.nav-a a {
+    font-size: 20px;
+    margin: 0 20px;
+    position: relative;
+    transition: 0.45s ease;
+}
+
+.nav-a a::before {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    background-color: #000;
+    bottom: 0;
+    transition: all 0.45s;
+    left: 50%;
+}
+
+.nav-a a:hover {
     font-weight: bold;
+    font-size: 22px;
+    color: #000;
 }
 
-.a-navbar:hover {
-    border-bottom: 2px solid white;
-    border-top: 2px solid white;
-    transition: .1s ease-in-out;
-    border-radius: 3px;
+.nav-a a:hover::before {
+    width: 100%;
+    left: 0;
 }
 
-.checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
+#menubar {
     display: none;
 }
 
-#check {
-    display: none;
+#menubar i:hover {
+    color: #000;
 }
 
-/* INTRO */
-.intro {
-    background-image: url(t4.jpeg);
+/* hero */
+#hero-cont {
+    margin-top: 3.7rem;
+    width: 100%;
+    height: 100vh;
+    background-image: url(assets/img/t4.jpeg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 100%;
-    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
-.h1-intro {
-    font-size: 130px;
-    font-family: 'Anta';
+#hero-cont h1 {
     text-align: center;
+    font-size: 5.5rem;
+    text-shadow: 5px 5px black;
+    font-family: 'Bad Script';
+}
+
+.pesan {
+    width: 200px;
+    height: 50px;
+    color: #fff;
     font-weight: bold;
-    color: white;
-    text-shadow: black 4px 4px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50px;
+    transition: .2s ease-in-out;
 }
 
-/* ABOUT */
-.about {
+.pesan:hover {
+    color: #000;
+    background-color: #fff;
+    width: 210px;
+    height: 55px;
+    margin-top: -5px;
+}
+
+.pesan::after,
+.pesan::before {
+    --angle: 0deg;
+    content: '';
     width: 100%;
-    height: 700px;
+    height: 100%;
+    position: absolute;
+    background: conic-gradient(from var(--angle), transparent 60%, lime);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 6px;
+    border-radius: 50px;
+    animation: 1s spin linear infinite;
+}
+
+.pesan::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* about */
+#about-cont {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.h2-about {
-    font-family: 'Alegreya SC';
-    font-size: 65px;
-    padding: 8px;
+#about-cont .about h2 {
+    font-size: 2.5rem;
+    border-bottom: 4px solid #000;
+    height: 50px;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
 }
 
-.p1-about {
-    font-size: 24px;
+#about-cont .about h3 {
+    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 
-.story-about {
-    font-size: 21px;
-    padding: 20px;
+.about-p p {
+    width: 26rem;
+    text-align: justify;
+    font-weight: 500;
+    color: #000;
 }
 
-.p2-about {
-    padding: 10px;
-    font-family: 'Cabin';
+#about-cont img {
+    width: 300px;
+    height: 300px;
+    margin-left: 4rem;
+    margin-top: 7rem;
+    border-radius: 30px;
+    border: 1px solid #000;
 }
 
-/* PROCES */
-.proces {
+/* proses */
+#proses-cont {
     width: 100%;
-    height: 700px;
+    height: 100vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-.h2-proces {
-    font-family: 'Alegreya SC';
-    font-size: 65px;
+#proses-cont h2 {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+    border-bottom: #000 solid 4px;
+    height: 50px;
+    width: 13rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .card-area {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 40px;
 }
 
 .card {
-    background-color: aliceblue;
-    height: 360px;
-    width: 250px;
+    background-color: #f8f8f8;
+    width: 240px;
+    height: 20rem;
+    border-radius: 20px;
+    text-align: center;
     border: 4px solid gray;
-    border-radius: 45px;
-    margin: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: baseline;
-    align-items: center;
-    padding-top: 50px;
-    box-shadow: 10px 10px;
+    box-shadow: #000 10px 5px 5px;
 }
 
-.judul-card {
-    font-size: 30px;
-    font-family: 'Alegreya SC';
+.card .p-judul {
     font-weight: bold;
+    font-size: 18px;
 }
 
-.isi-card {
-    font-size: 20px;
-    padding: 20px;
-    font-family: 'Cabin';
+.card span {
+    display: none;
 }
 
-/* LOKASI */
-.mitra {
-    width: 100%;
-    height: 1200px;
+.card p {
+    margin: 10px 15px 0;
+    color: #000;
+}
+
+.p-pers {
+    font-size: 15px;
+}
+
+#proses-cont img {
+    width: 110px;
+    height: 60px;
+}
+
+/* lokasi */
+#lokasi-cont {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.h2-mitra {
-    font-family: 'Alegreya SC';
-    display: flex;
-    justify-content: center;
-    font-size: 65px;
-}
-
-.p-mitra {
-    display: flex;
-    justify-content: center;
-    font-size: 23px;
-    padding-top: 20px;
-}
-
-.grid-container {
-    display: flex;
-    padding-left: 80px;
-}
-
-.ul-alamat {
-    display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(lime, #D1E9F6);
+}
+
+#lokasi-cont h2 {
+    font-size: 2.5rem;
+    border-bottom: 4px solid #000;
+    height: 50px;
+    margin-bottom: 30px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #000;
+    width: 28rem;
+    text-align: center;
+}
+
+#lokasi-cont iframe {
+    width: 600px;
+    height: 400px;
+    border: #000 solid 2px;
+}
+
+/* mitra */
+.mitra-cont {
+    width: 100%;
+    height: 150vh;
+    background-color: #D1E9F6;
+    display: flex;
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.li-alamat {
-    font-size: 20px;
-    margin: 8px;
-    padding-left: 10px;
+.mitra-cont h2 {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #000;
+    border-bottom: #000 solid 4px;
+    width: 12rem;
+    text-align: center;
+    height: 50px;
 }
 
-.line {
-    width: 500px;
-    margin-top: 7px;
-    margin-bottom: 10px;
+.mitra-cont p {
+    width: 48rem;
+    margin: 15px 0;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .grid {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 0 35px;
 }
 
-.img-grid {
-    padding-top: 150px;
+.grid div {
+    margin: 0 20px;
+    position: relative;
 }
 
-/* Maps */
-.gomap {
-    padding-top: 120px;
+.grid div::before {
+    content: '';
+    width: 500px;
+    height: 3px;
+    position: absolute;
+    background-color: #000;
+    top: 100%;
 }
 
-.maps {
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
+.grid div p {
+    width: max-content;
+    font-size: 16px;
 }
 
-.frame {
-    border-radius: 30px;
-
-}
-
-/* FOOTER */
 .footer {
-    background-color: #4a664b;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 200px;
+    height: 50px;
+    background-color: #4a664b;
 }
 
-.div-footer {
-    margin: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-footer {
-    font-size: 35px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.p-footer {
-    color: white;
-    font-size: 20px;
-    margin: 5px;
-    font-weight: bold;
-    display: flex;
-}
-
-.a-footer {
-    color: white;
-    font-size: 17px;
-    margin: 5px;
-}
-
-.a-footer:hover {
-    background-color: black;
-    transition: .2s ease-in-out;
-}
-.p-wa {
-    color: white;
-    font-size: 20px;
-    margin: 5px;
-    font-weight: bold;
-    display: flex;
-}
-.whatsapp {
-    margin-right: 15px;
-    font-size: 33px;
-    color: rgb(0, 255, 0);
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 858px) {
-    .logo {
-        font-size: 24px;
-        padding: 0 0 0 10px;
+@media (min-width: 1550px) {
+    #hero-cont h1 {
+        font-size: 7.5rem;
     }
 
-    .checkbtn {
-        display: block;
+    #about-cont .about h2 {
+        font-size: 3.8rem;
+        border-bottom: 4px solid #000;
+        height: 80px;
+        margin-bottom: 10px;
     }
-    .ul-navbar {
-        position: fixed;
-        width: 100%;
+
+    #about-cont .about h3 {
+        font-size: 22px;
+    }
+
+    .about-p p {
+        width: 29rem;
+        font-size: 18px;
+    }
+
+    #about-cont img {
+        width: 500px;
         height: 400px;
-        background-color: #4a664b;
-        top: 80px;
-        left: 100%;
-        text-align: center;
-        transition: all .5s;
     }
-    .li-navbar {
-        display: block;
-        line-height: 60px;
+
+    .card-area {
+        gap: 5px;
     }
-    .a-navbar {
+
+    #proses-cont h2 {
+        font-size: 3.8rem;
+        height: 80px;
+        width: 18rem;
+    }
+
+    .card {
+        width: 280px;
+        height: 24rem;
+    }
+
+    .card .p-judul {
         font-size: 20px;
     }
-    .a-navbar:hover {
-        border-bottom: none;
-        border-top: none;
-        color: black;
-    }
-    #check:checked ~ .ul-navbar{
-        left: 0;
+
+    .card p {
+        font-size: 115%;
     }
 
-    .intro {
-        height: 400px;
+    main::after {
+        top: 94%;
     }
 
-    .h1-intro {
-        font-size: 50px;
+    #lokasi-cont h2 {
+        font-size: 3.8rem;
+        height: 80px;
+        width: 35rem;
     }
 
-    .h2-about {
-        font-size: 38px;
+    #lokasi-cont iframe {
+        width: 700px;
+        height: 600px;
     }
 
-    .p1-about {
+    .mitra-cont h2 {
+        font-size: 3.8rem;
+        width: 16rem;
+        height: 80px;
+    }
+
+    .mitra-cont p {
+        width: 52rem;
+        font-size: 22px;
+    }
+
+    .grid div p {
+        font-size: 20px;
+    }
+
+    .grid div::before {
+        width: 630px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .card-area {
+        gap: 25px;
+    }
+
+    .card {
+        width: 220px;
+        height: 20rem;
+    }
+
+    #proses-cont img {
+        display: none;
+    }
+
+    .card .p-judul {
+        font-size: 20px;
+    }
+
+    .card-area span {
+        display: inline;
+        color: #000;
+    }
+
+    .grid div p {
+        font-size: 14px;
+    }
+
+    .grid div::before {
+        width: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .nav-a {
+        margin-right: 2rem;
+    }
+
+    .nav-a a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .nav-a a:hover {
         font-size: 18px;
     }
-    
-    .story-about {
-        font-size: 18px;
+
+    #hero-cont {
+        margin-top: 3.3rem;
     }
-    
-    .proces {
-        height: 2400px;
+
+    #about-cont {
+        font-size: 85%;
     }
-    .h2-proces {
-        font-size: 38px;
+
+    #about-cont .about h2 {
+        font-size: 2.3rem;
     }
+
+    #about-cont img {
+        width: 240px;
+        height: 240px;
+        margin-left: 2rem;
+        margin-top: 5rem;
+    }
+
+    #proses-cont {
+        height: max-content;
+    }
+
+    main::after {
+        top: 95%;
+    }
+
     .card-area {
         flex-direction: column;
-        padding: 0px;
-    }
-    .arrow {
-        transform: rotate(90deg);
-    }
-    .card {
-        margin: 40px;
-        padding-top: 20px;
-    }
-    .isi-card {
-        padding-top: 10px;
+        gap: 20px;
     }
 
-    .mitra {
-        height: 1670px;
+    .card {
+        width: 420px;
+        height: 13rem;
+        z-index: 2;
     }
-    .h2-mitra {
-        font-size: 38px;
+
+    .mitra-cont p {
+        width: 45rem;
+        font-size: 17px;
     }
-    .p-mitra {
+
+    .grid div p {
+        font-size: 14px;
+        width: 330px;
+        text-align: left;
+    }
+
+    .grid div::before {
+        width: 330px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kontak img {
+        height: 70px;
+        width: 70px;
+    }
+
+    #menubar {
+        display: inline-block;
+        margin: 0 40px;
         font-size: 20px;
-        text-align: center;
     }
-    .li-alamat {
-        font-size: 15px;
-    }
-    .grid {
+
+    .nav-a {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: linear-gradient(to bottom right, #ACE1AF, #4a664b 85%);
+        border-left: 2px solid black;
+        margin: unset;
         display: flex;
         flex-direction: column;
+        width: 40%;
+        height: 100vh;
+        transition: 0.3s ease;
     }
-    .grid-container {
-        padding-left: 0;
-        padding-bottom: 0;
-        flex-direction: column;
-    } 
-    .li-alamat {
-        padding-left: 0;
+
+    .nav-a a {
+        margin: 15px 3.5rem;
+        width: max-content;
     }
-    .line {
-        width: 340px;
+
+    .pesan {
+        width: 180px;
+        height: 40px;
     }
-    .img-grid {
-        width: 240px;
-        height: 215px;
-        padding-top: 20px;
-        padding-left: 20%;
-        justify-content: center;
+
+    .pesan:hover {
+        width: 190px;
+        height: 45px;
+    }
+
+    .active {
+        right: 0;
+    }
+
+    #about-cont {
+        font-size: 80%;
+    }
+
+    #about-cont .about h2 {
+        font-size: 2.2rem;
+    }
+
+    #about-cont .about h3 {
+        -webkit-text-stroke: 0;
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    #about-cont img {
+        width: 220px;
+        height: 220px;
+    }
+
+    #proses-cont h2 {
+        font-size: 2.2rem;
+        width: 12rem;
+    }
+
+    .about-p p {
+        width: 20rem;
+    }
+
+    #lokasi-cont h2 {
+        font-size: 2.2rem;
+        width: 22rem;
+    }
+
+    #lokasi-cont iframe {
+        width: 500px;
+        height: 300px;
+    }
+
+    .mitra-cont h2 {
+        font-size: 2.2rem;
+        width: 10rem;
+    }
+
+    .mitra-cont p {
+        width: 39rem;
+        font-size: 16px;
+    }
+
+    .grid div p {
+        font-size: 14px;
+        width: 270px;
+        text-align: left;
+    }
+
+    .grid div::before {
+        width: 270px;
     }
 
     .footer {
-        display: flex;
+        height: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    #hero-cont h1 {
+        font-size: 5rem;
+    }
+
+    .pesan {
+        width: 160px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .pesan:hover {
+        width: 170px;
+        height: 45px;
+    }
+
+    #about-cont {
+        font-size: 90%;
         flex-direction: column;
-        height: 500px;
-    }
-    .div-footer{
-        margin: 20px;
+        height: 140vh;
     }
 
-    .frame {
-        width: 350px;
-        height: 275px;
+    #about-cont .about h2 {
+        font-size: 2rem;
+    }
+
+    #about-cont img {
+        width: 250px;
+        height: 240px;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .about-p p {
+        width: 20rem;
+    }
+
+    #proses-cont h2 {
+        font-size: 2rem;
+        width: 10rem;
+    }
+
+    .card {
+        width: 380px;
+        height: 13rem;
+    }
+
+    .card .p-judul {
+        font-size: 18px;
+    }
+
+    #lokasi-cont h2 {
+        font-size: 2rem;
+        width: 20rem;
+    }
+
+    #lokasi-cont iframe {
+        width: 400px;
+        height: 300px;
+    }
+
+    .mitra-cont {
+        padding-bottom: 20px;
+    }
+
+    .mitra-cont h2 {
+        font-size: 2rem;
+        width: 9rem;
+    }
+
+    .mitra-cont p {
+        font-size: 14px;
+        width: 30rem;
+    }
+
+    .grid div p {
+        font-size: 13px;
+        width: 13rem;
+    }
+
+    .grid div::before {
+        width: 13rem;
     }
 }
 
-/* STICKY NAVBAR */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+@media (max-width: 475px) {
+    .logo {
+        font-size: 1.8rem;
+        margin-left: 8%;
+    }
 
-.sticky+.content {
-    padding-top: 60px;
-}
-/* STICKY NAVBAR */
+    .nav-a a {
+        margin: 15px 1.5rem;
+        width: max-content;
+    }
 
-.space {
-    background-color: #4a664b;
-    width: 100%;
-    height: 80px;
+    #hero-cont {
+        margin-top: 2.7rem;
+    }
+
+    #hero-cont h1 {
+        font-size: 3.2rem;
+    }
+
+    #about-cont {
+        font-size: 80%;
+    }
+
+    .card {
+        width: 360px;
+        height: 12rem;
+    }
+
+    .card .p-judul {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 90%;
+    }
+
+    #lokasi-cont iframe {
+        width: 300px;
+        height: 280px;
+    }
+
+    .mitra-cont {
+        height: max-content;
+    }
+
+    .mitra-cont p {
+        width: 20rem;
+    }
+
+    .grid {
+        display: block;
+    }
+
+    .grid div p {
+        font-size: 15px;
+        width: 21rem;
+    }
+
+    .grid div::before {
+        width: 21rem;
+    }
 }
