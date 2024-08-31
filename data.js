@@ -1,13 +1,13 @@
-window.onscroll = function() {myFunction()};
+const navbar = document.querySelector('.nav-a')
 
-var navbar = document.getElementById("navbar");
-
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+document.getElementById('menubar').onclick = () => {
+    navbar.classList.toggle('active')
 }
+
+const menu = document.getElementById('menubar')
+
+document.addEventListener('click', function(e) {
+    if(!menu.contains(e.target) && !navbar.contains(e.target)) {
+        navbar.classList.remove('active')
+    }
+})
