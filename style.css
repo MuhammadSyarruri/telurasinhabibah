@@ -220,7 +220,7 @@ nav {
 }
 
 #about-cont img {
-    width: 300px;
+    width: 340px;
     height: 300px;
     margin-left: 4rem;
     margin-top: 7rem;
@@ -329,6 +329,7 @@ nav {
 }
 
 .mitra-cont h2 {
+    color: #000;
     font-size: 2.5rem;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: #000;
