@@ -11,6 +11,12 @@ body {
   position: relative;
 }
 
+.section-title {
+  text-align: center;
+  text-decoration-line: underline;
+  margin-bottom: 20px;
+}
+
 /* Navbar */
 header {
   width: 100%;
@@ -82,4 +88,13 @@ header ul li:hover {
 .hero-section img {
   width: clamp(15rem, 40%, 40rem);
   height: auto;
+}
+
+/* About */
+.about-section {
+  padding-top: 20rem;
+  padding-inline: 20vw;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  text-align: start;
+  text-indent: 1.5em;
 }
