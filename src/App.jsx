@@ -2,7 +2,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      {/* <Hero /> */}
+      <Hero />
       {/* <About /> */}
       {/* <Process /> */}
       {/* <Location /> */}
@@ -25,5 +25,21 @@ function Navbar() {
         </ul>
       </nav>
     </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="hero-section">
+      <div className="hero-text">
+        <h2>Telur Asin Premium, Lezat & Bergizi</h2>
+        <p>
+          Dipercaya oleh puluhan mitra kuliner untuk menghadirkan cita rasa
+          autentik berkualitas.
+        </p>
+        <button>Pesan Sekarang</button>
+      </div>
+      <img src="/img/heroimg.png" alt="telur asin" />
+    </section>
   );
 }
