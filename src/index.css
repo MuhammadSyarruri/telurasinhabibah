@@ -7,14 +7,14 @@
 
 body {
   background: linear-gradient(135deg, #bfd8f4, #eaf3fb, #8fbff6, #63a5f0);
-  height: 300vh;
   position: relative;
 }
 
 .section-title {
   text-align: center;
   text-decoration-line: underline;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
 }
 
 /* Navbar */
@@ -59,6 +59,8 @@ header ul li:hover {
   justify-content: space-around;
   padding-inline: 10rem;
   gap: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-text {
@@ -97,4 +99,93 @@ header ul li:hover {
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   text-align: start;
   text-indent: 1.5em;
+}
+
+/* Process */
+.process-section {
+  text-align: center;
+  padding-top: 25rem;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.slide {
+  width: clamp(200px, 40vw, 350px);
+  height: 25rem;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  background-color: #fff;
+  border-radius: 15px;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  position: relative;
+}
+
+.slide h3 {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.dots {
+  margin-top: 1rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+
+  .hero-section {
+    margin-top: 6rem;
+    padding-inline: 3rem;
+  }
+
+  .hero-section img {
+    position: absolute;
+    width: 500px;
+    z-index: -1;
+    opacity: 0.4;
+    left: 11rem;
+    bottom: -2rem;
+  }
+
+  .about-section {
+    padding-inline: 10vw;
+  }
+
+  .slide {
+    width: 280px;
+    height: 22rem;
+  }
 }
