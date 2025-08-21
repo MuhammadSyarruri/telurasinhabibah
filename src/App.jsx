@@ -14,8 +14,17 @@ export default function App() {
 }
 
 function Navbar() {
+  const [position, setPosition] = useState(false);
+
+  addEventListener("scroll", () => {
+    let currentPosition = window.scrollY;
+    if (currentPosition >= 50) {
+      setPosition(true);
+    } else setPosition(false);
+  });
+
   return (
-    <header>
+    <header className={position ? "scroled-header" : ""}>
       <h1>HABIBAH.</h1>
       <nav>
         <ul>

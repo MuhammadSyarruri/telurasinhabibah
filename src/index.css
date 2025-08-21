@@ -26,6 +26,14 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 999;
+  transition: all 0.2s ease;
+}
+
+.scroled-header {
+  background-color: #000;
+  color: white;
+  padding: 1rem 2.5rem;
 }
 
 header h1 {
@@ -162,8 +170,12 @@ header ul li:hover {
 }
 
 @media (max-width: 768px) {
-  header ul {
+  header nav {
     display: none;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
   }
 
   .hero-section {
