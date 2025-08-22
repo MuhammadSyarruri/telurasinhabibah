@@ -80,7 +80,6 @@ header ul li:hover {
 }
 
 .hero-text button {
-  border: none;
   padding: 15px 25px;
   font-size: 1.5rem;
   background-color: #000;
@@ -237,6 +236,45 @@ header ul li:hover {
   font-weight: bold;
 }
 
+/* Footer */
+footer {
+  color: #fff;
+}
+
+.kontak {
+  background-color: #111;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.6rem;
+  font-size: 1.1rem;
+}
+
+.kontak button {
+  border: solid 1px;
+  padding: 10px 15px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.kontak button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.kontak span {
+  color: #1afd57;
+  margin: 0 4px 0 8px;
+}
+
+.copyright {
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+}
+
 @media (max-width: 768px) {
   header nav {
     display: none;
@@ -274,8 +312,17 @@ header ul li:hover {
     height: 300px;
   }
 
+  .mitra-section {
+    padding-bottom: 10rem;
+  }
+
   .mitra-container div {
     margin: 0 30px;
+  }
+
+  .kontak {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 

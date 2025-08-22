@@ -11,6 +11,7 @@ export default function App() {
       <Product />
       <Location />
       <Mitra />
+      <Footer />
     </>
   );
 }
@@ -202,5 +203,25 @@ function Mitra() {
         })}
       </div>
     </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <div className="kontak">
+        <p>
+          Kontak Saya:
+          <span>
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+          0812-7248-4363
+        </p>
+        <button>Kembali ke atas</button>
+      </div>
+      <div className="copyright">
+        Copyright &copy;2025; Designed by Muhammad Syarruri
+      </div>
+    </footer>
   );
 }
