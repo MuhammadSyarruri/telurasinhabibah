@@ -1,3 +1,5 @@
+@import "leaflet/dist/leaflet.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -201,6 +203,19 @@ header ul li:hover {
   font-size: clamp(0.8rem, 1vw, 1rem);
 }
 
+/* Location */
+.location-section {
+  padding-top: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map {
+  width: 50%;
+  height: 400px;
+}
+
 @media (max-width: 768px) {
   header nav {
     display: none;
@@ -231,5 +246,10 @@ header ul li:hover {
   .slide {
     width: 280px;
     height: 22rem;
+  }
+
+  .map {
+    width: 80%;
+    height: 300px;
   }
 }
