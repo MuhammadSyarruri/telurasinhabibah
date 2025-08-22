@@ -1,5 +1,3 @@
-@import "leaflet/dist/leaflet.css";
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -216,6 +214,29 @@ header ul li:hover {
   height: 400px;
 }
 
+/* Mitra */
+.mitra-section {
+  padding: 18rem 0;
+}
+
+.mitra-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size: clamp(0.7rem, 2vw, 1.2rem);
+  justify-content: center;
+  gap: 25px;
+}
+
+.mitra-container div {
+  border-bottom: solid 1px;
+}
+
+.mitra-container div p:first-child {
+  margin: 2px 0;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   header nav {
     display: none;
@@ -251,5 +272,16 @@ header ul li:hover {
   .map {
     width: 80%;
     height: 300px;
+  }
+
+  .mitra-container div {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mitra-container {
+    grid-template-columns: auto;
+    gap: 15px;
   }
 }

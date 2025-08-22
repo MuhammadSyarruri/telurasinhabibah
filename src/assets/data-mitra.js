@@ -1,62 +1,62 @@
-const mitra = [
+const mitraList = [
   {
-    Name: "Pecel Lele Bang Ramli",
-    Location: "Jl. Makrayu, 30 ilir, kec ilir barat II",
+    name: "Pecel Lele Bang Ramli",
+    location: "Jl. Makrayu, 30 ilir, kec ilir barat II",
   },
   {
-    Name: "Soto Bang Yadi",
-    Location: "Jl. Mayor Salim Batubara, 20 ilir D.1, Kec Kemuning",
+    name: "Soto Bang Yadi",
+    location: "Jl. Mayor Salim Batubara, 20 ilir D.1, Kec Kemuning",
   },
   {
-    Name: "Rumah Makan Minang Jaya",
-    Location: "Jl. May Zen, Sei Selayur, Kec. Kalidoni",
+    name: "Rumah Makan Minang Jaya",
+    location: "Jl. May Zen, Sei Selayur, Kec. Kalidoni",
   },
   {
-    Name: "Soto Kwali Khas Solo Pak Ugeng",
-    Location:
+    name: "Soto Kwali Khas Solo Pak Ugeng",
+    location:
       "Jl. Demang Lebar Daun No.71, Demang Lebar Daun, Kec. Ilir Bar. I",
   },
   {
-    Name: "Soto Tabes",
-    Location: "Jl. Jaya 7",
+    name: "Soto Tabes",
+    location: "Jl. Jaya 7",
   },
   {
-    Name: "Kantin Bank Mandiri Ariep",
-    Location: "Jl. Kapten A. Rivai No.39, Sungai Pangeran, Kec. Ilir Tim. I",
+    name: "Kantin Bank Mandiri Ariep",
+    location: "Jl. Kapten A. Rivai No.39, Sungai Pangeran, Kec. Ilir Tim. I",
   },
   {
-    Name: "Rumah Makan Maka Jaya",
-    Location: "Jl. Bambang Utoyo, Duku, Kec. Ilir Tim. II",
+    name: "Rumah Makan Maka Jaya",
+    location: "Jl. Bambang Utoyo, Duku, Kec. Ilir Tim. II",
   },
   {
-    Name: "Soto Bambang (Soto Kampus Group)",
-    Location: "Jl. Kapten Anwar Sastro, Sungai Pangeran, Kec. ilir tim I",
+    name: "Soto Bambang (Soto Kampus Group)",
+    location: "Jl. Kapten Anwar Sastro, Sungai Pangeran, Kec. ilir tim I",
   },
   {
-    Name: "Sate Pak Karyo",
-    Location: "Jl. H. Abdul Rozak, Bukit Sangkal, Kec. Ilir Tim. II",
+    name: "Sate Pak Karyo",
+    location: "Jl. H. Abdul Rozak, Bukit Sangkal, Kec. Ilir Tim. II",
   },
   {
-    Name: "Abah Jalil Soto dan Sop",
-    Location: "Jl. Letnan Sayuti No.42, 18 Ilir, Kec. Ilir Tim. I",
+    name: "Abah Jalil Soto dan Sop",
+    location: "Jl. Letnan Sayuti No.42, 18 Ilir, Kec. Ilir Tim. I",
   },
   {
-    Name: "Seafood & Pecel Lele 99 H.Syam",
-    Location:
+    name: "Seafood & Pecel Lele 99 H.Syam",
+    location:
       "Jl. Jenderal Ahmad Yani No.27, Tangga Takat, Kec. Seberang Ulu II",
   },
   {
-    Name: "Kantin Bank Mandiri A. Rivai",
-    Location: "Jl. Kapten A. Rivai No.39, Sungai Pangeran, Kec. Ilir Tim. I",
+    name: "Kantin Bank Mandiri A. Rivai",
+    location: "Jl. Kapten A. Rivai No.39, Sungai Pangeran, Kec. Ilir Tim. I",
   },
   {
-    Name: "Warung Makan Tari Rahayu",
-    Location: "Jl. Kapten A. Rivai No.77, 26 Ilir, Kec. Bukit Kecil",
+    name: "Warung Makan Tari Rahayu",
+    location: "Jl. Kapten A. Rivai No.77, 26 Ilir, Kec. Bukit Kecil",
   },
   {
-    Name: "Soto Bang Wawi/Mie Legend Ayam",
-    Location: "Jl. KH Wahid Hasyim, 2 Ulu, Kecamatan Seberang Ulu I",
+    name: "Soto Bang Wawi/Mie Legend Ayam",
+    location: "Jl. KH Wahid Hasyim, 2 Ulu, Kecamatan Seberang Ulu I",
   },
 ];
 
-export default mitra;
+export default mitraList;

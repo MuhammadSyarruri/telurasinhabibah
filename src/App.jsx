@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import mitraList from "./assets/data-mitra";
 
 export default function App() {
   return (
@@ -11,7 +10,7 @@ export default function App() {
       <Process />
       <Product />
       <Location />
-      {/* <Mitra /> */}
+      <Mitra />
     </>
   );
 }
@@ -184,6 +183,24 @@ function Location() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
+    </section>
+  );
+}
+
+function Mitra() {
+  return (
+    <section className="mitra-section">
+      <h2 className="section-title">Mitra</h2>
+      <div className="mitra-container">
+        {mitraList.map((mitra, index) => {
+          return (
+            <div key={index}>
+              <p>{mitra.name}</p>
+              <p>{mitra.location}</p>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }
