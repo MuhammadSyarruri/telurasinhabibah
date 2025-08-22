@@ -102,7 +102,7 @@ header ul li:hover {
 
 /* About */
 .about-section {
-  padding-top: 20rem;
+  padding-top: 18rem;
   padding-inline: 20vw;
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   text-align: start;
@@ -112,7 +112,7 @@ header ul li:hover {
 /* Process */
 .process-section {
   text-align: center;
-  padding-top: 25rem;
+  padding-top: 18rem;
 }
 
 .slider {
@@ -159,14 +159,46 @@ header ul li:hover {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: #ccc;
+  background: #fff;
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
 }
 
 .dot.active {
-  background: #333;
+  background: #000;
+}
+
+/* Product */
+.product-section {
+  padding-top: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product img {
+  width: clamp(15rem, 40%, 25rem);
+  height: auto;
+  border-radius: 10px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.note {
+  font-size: clamp(0.8rem, 1vw, 1rem);
 }
 
 @media (max-width: 768px) {
