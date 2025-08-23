@@ -32,13 +32,19 @@ header {
 
 .scroled-header {
   background-color: #000;
-  color: white;
+  color: #fff;
   padding: 1rem 2.5rem;
 }
 
 header h1 {
   font-style: italic;
   font-size: 2.2rem;
+}
+
+.menu {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
 }
 
 header ul {
@@ -51,11 +57,22 @@ header ul {
 
 header ul li {
   transition: all 0.2s ease;
+  width: max-content;
+  cursor: pointer;
 }
 
 header ul li:hover {
   font-size: 1.6rem;
   border-bottom: solid;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000020;
 }
 
 /* Hero */
@@ -216,6 +233,16 @@ header ul li:hover {
 /* Mitra */
 .mitra-section {
   padding: 18rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mitra-section > p {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: -20px 20px 30px 20px;
+  max-width: 50rem;
 }
 
 .mitra-container {
@@ -276,8 +303,35 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+
+  .menu {
+    display: block;
+  }
+
   header nav {
-    display: none;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    right: -52%;
+    height: 100vh;
+    width: 50vw;
+    padding: 3rem 2rem;
+    transition: right 0.5s ease;
+    z-index: 999;
+  }
+
+  .activeNav {
+    right: 0;
+    color: #fff;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
   header h1 {

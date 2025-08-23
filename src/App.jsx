@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import mitraList from "./assets/data-mitra";
 
 export default function App() {
@@ -18,24 +19,55 @@ export default function App() {
 
 function Navbar() {
   const [position, setPosition] = useState(false);
+  const [activeNav, setActiveNav] = useState(false);
 
-  addEventListener("scroll", () => {
-    let currentPosition = window.scrollY;
-    if (currentPosition >= 50) {
-      setPosition(true);
-    } else setPosition(false);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setPosition(window.scrollY >= 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className={position ? "scroled-header" : ""}>
       <h1>HABIBAH.</h1>
-      <nav>
+      <span
+        className="menu"
+        onClick={() => {
+          setActiveNav(true);
+        }}
+      >
+        <i className="fa-solid fa-bars"></i>
+      </span>
+
+      {activeNav && (
+        <div className="overlay" onClick={() => setActiveNav(false)}></div>
+      )}
+
+      <nav className={activeNav ? "activeNav" : ""}>
         <ul>
-          <li>Home</li>
-          <li>Tentang</li>
-          <li>Proses</li>
-          <li>Lokasi</li>
-          <li>Mitra</li>
+          <li>
+            <NavLink to={"home"}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={"aboutSection"}>Tentang</NavLink>
+          </li>
+          <li>
+            <NavLink to={"processSection"}>Proses</NavLink>
+          </li>
+          <li>
+            <NavLink to={"productSection"}>Produk</NavLink>
+          </li>
+          <li>
+            <NavLink to={"locationSection"} onClick={() => setActiveNav(false)}>
+              Lokasi
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"mitraSection"}>Mitra</NavLink>
+          </li>
         </ul>
       </nav>
     </header>
@@ -44,7 +76,7 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="home">
       <div className="hero-text">
         <h2>Telur Asin Premium, Lezat & Bergizi</h2>
         <p>
@@ -61,7 +93,9 @@ function Hero() {
 function About() {
   return (
     <section className="about-section">
-      <h2 className="section-title">Tentang Kami</h2>
+      <h2 className="section-title" id="aboutSection">
+        Tentang Kami
+      </h2>
       <p>
         Di sini, kami menghadirkan telur asin terbaik untuk Anda. Perjalanan
         kami dimulai pada tahun 2015 dengan misi sederhana yaitu memproduksi
@@ -111,20 +145,22 @@ function Process() {
   };
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? steps.length - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? 0 : prev - 1));
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrent((prev) => (prev === steps.length - 1 ? 0 : prev + 1));
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [current]);
+  }, [steps.length]);
 
   return (
     <section className="process-section">
-      <h2 className="section-title">Proses Pembuatan</h2>
+      <h2 className="section-title" id="processSection">
+        Proses Pembuatan
+      </h2>
 
       <div className="slider">
         <button onClick={prevSlide} className="nav-btn">
@@ -155,7 +191,9 @@ function Process() {
 function Product() {
   return (
     <section className="product-section">
-      <h2 className="section-title">Produk</h2>
+      <h2 className="section-title" id="productSection">
+        Produk
+      </h2>
       <div className="product">
         <img src="/img/display1.jpeg" alt="telur asin" />
         <img src="/img/display2.jpg" alt="telur asin" />
@@ -176,7 +214,9 @@ function Product() {
 function Location() {
   return (
     <section className="location-section">
-      <h2 className="section-title">Lokasi</h2>
+      <h2 className="section-title" id="locationSection">
+        Lokasi
+      </h2>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d840.8208263766476!2d104.7512874442546!3d-3.0224045182233388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9d3d58a5b32b%3A0xae3c4fdcd159deea!2sTelur%20Asin%20Habibah!5e0!3m2!1sid!2sid!4v1755833178185!5m2!1sid!2sid"
         className="map"
@@ -191,7 +231,14 @@ function Location() {
 function Mitra() {
   return (
     <section className="mitra-section">
-      <h2 className="section-title">Mitra</h2>
+      <h2 className="section-title" id="mitraSection">
+        Mitra
+      </h2>
+      <p>
+        Saat ini kami sudah bekerja sama dengan beberapa rumah makan yang ada di
+        wilayah Palembang untuk menyajikan telur asin kami kepada para
+        pelanggan, Berikut nama dan lokasi.
+      </p>
       <div className="mitra-container">
         {mitraList.map((mitra, index) => {
           return (
@@ -213,15 +260,32 @@ function Footer() {
         <p>
           Kontak Saya:
           <span>
-            <i class="fa-brands fa-whatsapp"></i>
+            <i className="fa-brands fa-whatsapp"></i>
           </span>
           0812-7248-4363
         </p>
-        <button>Kembali ke atas</button>
+        <button
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <NavLink to={"home"}>Kembali ke atas</NavLink>
+        </button>
       </div>
       <div className="copyright">
         Copyright &copy;2025; Designed by Muhammad Syarruri
       </div>
     </footer>
+  );
+}
+
+function NavLink({ to, children }) {
+  return (
+    <Link to={to} smooth={true} duration={500} offset={-200}>
+      {children}
+    </Link>
   );
 }
