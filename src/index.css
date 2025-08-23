@@ -17,6 +17,28 @@ body {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
 }
 
+.order-btn {
+  padding: 15px 25px;
+  font-size: 1.5rem;
+  background-color: #000;
+  border-radius: 30px;
+  border: solid #000;
+  transition: all 0.2s ease;
+}
+
+.order-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.order-btn:hover {
+  background-color: #fff;
+}
+
+.order-btn a:hover {
+  color: #000;
+}
+
 /* Navbar */
 header {
   width: 100%;
@@ -94,21 +116,6 @@ header ul li:hover {
   flex-direction: column;
   align-items: start;
   gap: 25px;
-}
-
-.hero-text button {
-  padding: 15px 25px;
-  font-size: 1.5rem;
-  background-color: #000;
-  color: #fff;
-  border-radius: 30px;
-  border: solid #000;
-  transition: all 0.2s ease;
-}
-
-.hero-text button:hover {
-  background-color: #fff;
-  color: #000;
 }
 
 .hero-section img {
@@ -215,6 +222,7 @@ header ul li:hover {
 
 .note {
   font-size: clamp(0.8rem, 1vw, 1rem);
+  margin-bottom: 2rem;
 }
 
 /* Location */

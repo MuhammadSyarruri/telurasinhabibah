@@ -83,7 +83,7 @@ function Hero() {
           Dipercaya oleh puluhan mitra kuliner untuk menghadirkan cita rasa
           autentik berkualitas.
         </p>
-        <button>Pesan Sekarang</button>
+        <OrderBtn />
       </div>
       <img src="/img/heroimg.png" alt="telur asin" />
     </section>
@@ -207,6 +207,7 @@ function Product() {
         <li>Luar kota via ekspedisi (ongkir di tanggung pembeli).</li>
         <li>telur asin di stok ulang setiap hari selasa dan jum'at.</li>
       </ul>
+      <OrderBtn />
     </section>
   );
 }
@@ -287,5 +288,15 @@ function NavLink({ to, children }) {
     <Link to={to} smooth={true} duration={500} offset={-200}>
       {children}
     </Link>
+  );
+}
+
+function OrderBtn() {
+  return (
+    <button className="order-btn">
+      <a href="https://wa.me/6281272484363" target="_blank">
+        Pesan Sekarang
+      </a>
+    </button>
   );
 }
