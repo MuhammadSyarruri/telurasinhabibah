@@ -7,9 +7,9 @@ export default function ProductSection() {
         Produk
       </h2>
       <div className="product">
-        <img src="/img/display1.jpeg" alt="telur asin" />
-        <img src="/img/display2.jpg" alt="telur asin" />
-        <img src="/img/display3.jpeg" alt="telur asin" />
+        <img src="img/display1.jpeg" alt="telur asin" />
+        <img src="img/display2.jpg" alt="telur asin" />
+        <img src="img/display3.jpeg" alt="telur asin" />
       </div>
       <p className="price">Harga: Rp3.500 / butir</p>
       <ul className="note">

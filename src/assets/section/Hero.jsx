@@ -11,7 +11,7 @@ export default function HeroSection() {
         </p>
         <OrderBtn />
       </div>
-      <img src="/img/heroimg.png" alt="telur asin" />
+      <img src="img/heroimg.png" alt="telur asin" />
     </section>
   );
 }
